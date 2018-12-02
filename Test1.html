@@ -42,10 +42,10 @@
     random : TD.button({x:190,y:340,width:170,height:90,label:"Random LED",onchange:function(){
       Puck.write("random();\n");
     }}),
-    all : TD.button({x:10,y:440,width:170,height:90,label:"LEDs ON",onchange:function(){
+    all : TD.button({x:10,y:440,width:170,height:90,label:"All LEDs ON",onchange:function(){
       Puck.write("all();\n");
     }}),
-    off : TD.button({x:190,y:440,width:170,height:90,label:"LEDs OFF",onchange:function(){
+    off : TD.button({x:190,y:440,width:170,height:90,label:"All LEDs OFF",onchange:function(){
       Puck.write("off();\n");
     }}),
     modal: TD.modal({x:10,y:10,width:600,height:430,label:"Click to connect",onchange:connectDevice})
