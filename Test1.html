@@ -28,18 +28,18 @@
   }
   // Set up the controls we see on the screen    
   var elements = {
-    heading : TD.label({x:10,y:10,width:170,height:220,label:"Colour Band"}),
+    heading : TD.label({x:10,y:10,width:170,height:220,label:"Colour Band v1.0"}),
     bat : TD.gauge({x:190,y:10,width:170,height:220,label:"Battery Level",value:0,min:0,max:100}),
-    redled : TD.toggle({x:10,y:240,width:170,height:90,label:"Red LED",value:0,onchange:function(el,v) {
+    redled : TD.button({x:10,y:240,width:170,height:90,label:"Red LED",onchange:function(el,v) {
       Puck.write("LED1.write("+v+");\n");
     }}),
-    greenled : TD.toggle({x:190,y:240,width:170,height:90,label:"Green LED",value:0,onchange:function(el,v) {
+    greenled : TD.button({x:190,y:240,width:170,height:90,label:"Green LED",onchange:function(el,v) {
       Puck.write("LED2.write("+v+");\n");
     }}),
-    blueled : TD.toggle({x:10,y:340,width:170,height:90,label:"Blue LED",value:0,onchange:function(el,v) {
+    blueled : TD.button({x:10,y:340,width:170,height:90,label:"Blue LED",onchange:function(el,v) {
       Puck.write("LED3.write("+v+");\n");
     }}),
-    flash : TD.button({x:190,y:340,width:170,height:90,label:"Flash!",onchange:function(){
+    random : TD.button({x:190,y:340,width:170,height:90,label:"Random",onchange:function(){
       Puck.write("digitalPulse(LED3,1,500);\n");
     }}),
     modal: TD.modal({x:10,y:10,width:600,height:430,label:"Click to connect",onchange:connectDevice})
