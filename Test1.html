@@ -31,22 +31,22 @@
     heading : TD.label({x:10,y:10,width:170,height:220,label:"Colour Band v1.0"}),
     bat : TD.gauge({x:190,y:10,width:170,height:220,label:"Battery Level",value:0,min:0,max:100}),
     redled : TD.button({x:10,y:240,width:170,height:90,label:"Red LED",onchange:function(el,v) {
-      Puck.write("LED1.write(true);\n");
-     Puck.write("LED2.write(false);\n");
-     Puck.write("LED3.write(false);\n");
+      Puck.write("red();\n");
     }}),
     greenled : TD.button({x:190,y:240,width:170,height:90,label:"Green LED",onchange:function(el,v) {
-       Puck.write("LED1.write(false);\n");
-     Puck.write("LED2.write(true);\n");
-     Puck.write("LED3.write(false);\n");
+       Puck.write("green();\n");
     }}),
     blueled : TD.button({x:10,y:340,width:170,height:90,label:"Blue LED",onchange:function(el,v) {
-       Puck.write("LED1.write(false);\n");
-     Puck.write("LED2.write(false);\n");
-     Puck.write("LED3.write(true);\n");
+       Puck.write("blue();\n");
     }}),
-    random : TD.button({x:190,y:340,width:170,height:90,label:"Random",onchange:function(){
-      Puck.write("digitalPulse(LED3,1,500);\n");
+    random : TD.button({x:190,y:340,width:170,height:90,label:"Random LED",onchange:function(){
+      Puck.write("random();\n");
+    }}),
+    all : TD.button({x:10,y:440,width:170,height:90,label:"LEDs ON",onchange:function(){
+      Puck.write("all();\n");
+    }}),
+    off : TD.button({x:190,y:440,width:170,height:90,label:"LEDs OFF",onchange:function(){
+      Puck.write("off();\n");
     }}),
     modal: TD.modal({x:10,y:10,width:600,height:430,label:"Click to connect",onchange:connectDevice})
   }
