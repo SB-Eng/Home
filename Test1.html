@@ -21,8 +21,8 @@
       elements.bat.setValue(d.bat);
       // now get the history - these could take a while
       // so we do it separately.
-      //UART.eval("{sensor1 : E.getTemperature()}", function(d) {
-       // elements.sensor1.setvalue(d.sensor1);
+      UART.eval("{sensor1 : E.getTemperature()}", function(d) {
+        elements.sensor1.setvalue(d.sensor1);}
       
     });
   }
