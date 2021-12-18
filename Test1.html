@@ -23,7 +23,9 @@
       // so we do it separately.
       //UART.eval("{sensor1 : E.getTemperature()}", function(d) {
         //elements.sensor1.setvalue(d.sensor1);}
-      
+      UART.eval("temp[1]", function(d) {
+
+        elements.sensor1.setValue(d)});
     });
   }
   // Set up the controls we see on the screen    
