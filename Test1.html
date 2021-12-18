@@ -28,25 +28,25 @@
   }
   // Set up the controls we see on the screen    
   var elements = {
-    heading : TD.label({x:10,y:10,width:170,height:220,label:"Colour Band v1.0"}),
+    heading : TD.label({x:10,y:10,width:170,height:220,label:"Home Automation v1.0"}),
     bat : TD.gauge({x:190,y:10,width:170,height:220,label:"Battery Level",value:0,min:0,max:100}),
     redled : TD.button({x:10,y:240,width:170,height:90,label:"Red LED",onchange:function(el,v) {
-      Puck.write("red();\n");
+      UART.write("red();\n");
     }}),
     greenled : TD.button({x:190,y:240,width:170,height:90,label:"Green LED",onchange:function(el,v) {
-       Puck.write("green();\n");
+       UART.write("green();\n");
     }}),
     blueled : TD.button({x:10,y:340,width:170,height:90,label:"Blue LED",onchange:function(el,v) {
-       Puck.write("blue();\n");
+       UART.write("blue();\n");
     }}),
     random : TD.button({x:190,y:340,width:170,height:90,label:"Random LED",onchange:function(){
-      Puck.write("random();\n");
+      UART.write("random();\n");
     }}),
     all : TD.button({x:10,y:440,width:170,height:90,label:"All LEDs ON",onchange:function(){
-      Puck.write("all();\n");
+      UART.write("all();\n");
     }}),
     off : TD.button({x:190,y:440,width:170,height:90,label:"All LEDs OFF",onchange:function(){
-      Puck.write("off();\n");
+      UART.write("off();\n");
     }}),
     modal: TD.modal({x:10,y:10,width:600,height:430,label:"Click to connect",onchange:connectDevice})
   }
