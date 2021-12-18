@@ -24,20 +24,17 @@
       //UART.eval("{sensor1 : E.getTemperature()}", function(d) {
         //elements.sensor1.setvalue(d.sensor1);}
       UART.eval("temp[1]", function(d) {
-
         elements.sensor1.setValue(d)});
+     UART.eval("temp[2]", function(d) {
+        elements.sensor2.setValue(d)});
     });
   }
   // Set up the controls we see on the screen    
   var elements = {
     heading : TD.label({x:10,y:10,width:170,height:220,label:"Home Automation v1.0"}),
     bat : TD.gauge({x:190,y:10,width:170,height:220,label:"Battery Level",value:0,min:0,max:100}),
-    sensor1 : TD.value({x:10,y:240,width:170,height:90,label:"Loft Temp",value:function(el,v) {
-       UART.eval("E.getTemperature();");
-    }}),
-    greenled : TD.button({x:190,y:240,width:170,height:90,label:"Green LED",onchange:function(el,v) {
-       UART.write("green();\n");
-    }}),
+    sensor1 : TD.value({x:10,y:240,width:170,height:90,label:"Loft Temp",value:""}),
+   sensor2 : TD.value({x:190,y:240,width:170,height:90,label:"Loft Temp",value:""}),
     blueled : TD.button({x:10,y:340,width:170,height:90,label:"Blue LED",onchange:function(el,v) {
        UART.write("blue();\n");
     }}),
