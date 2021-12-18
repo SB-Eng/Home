@@ -45,21 +45,12 @@
     bat : TD.gauge({x:190,y:10,width:170,height:220,label:"Battery Level",value:0,min:0,max:100}),
    sensor1 : TD.value({x:10,y:240,width:170,height:90,label:"Loft Temp",value:""}),
    sensor2 : TD.value({x:190,y:240,width:170,height:90,label:"Hallway Temp",value:""}),
-   sensor3 : TD.value({x:10,y:440,width:170,height:90,label:"Bathroom Temp",value:""}),
-   sensor4 : TD.value({x:190,y:440,width:170,height:90,label:"Main Bedroom Temp",value:""}),
-   sensor5 : TD.value({x:10,y:640,width:170,height:90,label:"Kids Bedroom Temp",value:""}),
-   sensor6 : TD.value({x:190,y:640,width:170,height:90,label:"Kitchen Temp",value:""}),
-   sensor7 : TD.value({x:10,y:840,width:170,height:90,label:"Jaydens Room Temp",value:""}),
-    
-    random : TD.button({x:190,y:340,width:170,height:90,label:"Random LED",onchange:function(){
-      UART.write("random();\n");
-    }}),
-    all : TD.button({x:10,y:440,width:170,height:90,label:"All LEDs ON",onchange:function(){
-      UART.write("all();\n");
-    }}),
-    off : TD.button({x:190,y:440,width:170,height:90,label:"All LEDs OFF",onchange:function(){
-      UART.write("off();\n");
-    }}),
+   sensor3 : TD.value({x:10,y:340,width:170,height:90,label:"Bathroom Temp",value:""}),
+   sensor4 : TD.value({x:190,y:340,width:170,height:90,label:"Main Bedroom Temp",value:""}),
+   sensor5 : TD.value({x:10,y:440,width:170,height:90,label:"Kids Bedroom Temp",value:""}),
+   sensor6 : TD.value({x:190,y:440,width:170,height:90,label:"Kitchen Temp",value:""}),
+   sensor7 : TD.value({x:10,y:540,width:170,height:90,label:"Jaydens Room Temp",value:""}),
+
     modal: TD.modal({x:10,y:10,width:600,height:430,label:"Click to connect",onchange:connectDevice})
   }
   for (var i in elements)
