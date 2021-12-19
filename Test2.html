@@ -13,8 +13,8 @@
     UART.eval("{bat: E.getTemperature()}", function(d,err) {
       //if (!d) {
         //alert("Web Bluetooth connection failed!\n"+(err||""));
-        return;
-      }
+        //return;
+      //}
       // remove the 'connect' window
       elements.modal.remove();
       // update the controls with the values we received
