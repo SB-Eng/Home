@@ -10,7 +10,7 @@
   <script>
   function connectDevice() {
     // connect, and ask for the battery percentage
-    UART.eval("{tempAve: tempAve;}", function(d,err) {
+    UART.eval("{bat: E.getTemperature();}", function(d,err) {
       if (!d) {
         alert("Web Bluetooth connection failed!\n"+(err||""));
         return;
@@ -18,7 +18,7 @@
       // remove the 'connect' window
       elements.modal.remove();
       // update the controls with the values we received
-      elements.bat.setValue(d.bat);
+      //elements.bat.setValue(d.bat);
       // now get the history - these could take a while
       // so we do it separately.
       //UART.eval("{sensor1 : E.getTemperature()}", function(d) {
