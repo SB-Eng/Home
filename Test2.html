@@ -39,7 +39,7 @@
         elements.sensor6.setValue(d)});
      UART.eval("temp[7]", function(d) {
         elements.sensor7.setValue(d)});
-      }, 1000);
+      }, 10000);
     });
   }
   // Set up the controls we see on the screen    
@@ -54,7 +54,7 @@
    sensor6 : TD.value({x:190,y:440,width:170,height:90,label:"Kitchen Temp",value:""}),
    sensor7 : TD.value({x:10,y:540,width:170,height:90,label:"Jaydens Room Temp",value:""}),
 
-    modal: TD.modal({x:10,y:10,width:600,height:430,label:"Click to connect",onchange:connectDevice})
+    modal: TD.modal({x:10,y:10,width:400,height:200,label:"Click to connect",onchange:connectDevice})
   }
   for (var i in elements)
     document.body.appendChild(elements[i]);
