@@ -23,9 +23,15 @@
       // so we do it separately.
       //UART.eval("{sensor1 : E.getTemperature()}", function(d) {
         //elements.sensor1.setvalue(d.sensor1);}
-     
+     update();
      setInterval(function() {
-     UART.eval("tempAve", function(d) {
+      update();
+      }, 10000);
+    });
+  }
+  
+  function update() {
+   UART.eval("tempAve", function(d) {
         elements.tempAve.setValue(d)});
       UART.eval("humidityAve", function(d) {
         elements.humidityAve.setValue(d)});
@@ -78,11 +84,10 @@
         elements.sensorH7.setValue(d)});
      UART.eval("battery[7]", function(d) {
         elements.sensorB7.setValue(d)});
-      
-      }, 10000);
-    });
   }
-  // Set up the controls we see on the screen    
+  
+   
+   // Set up the controls we see on the screen    
   var elements = {
     heading : TD.label({x:10,y:10,width:170,height:220, label:"Home Automation v1.0"}),
     //bat : TD.gauge({x:190,y:10,width:170,height:220,label:"Battery Level",value:0,min:0,max:100}),
