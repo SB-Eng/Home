@@ -26,7 +26,6 @@
      update();
      setInterval(function() {
       update();
-      elements = elements2;
       }, 10000);
     });
   }
@@ -143,15 +142,6 @@
     modal: TD.modal({x:10,y:10,width:370,height:600,label:"Click to connect",onchange:connectDevice})
   }
   
-     var elements2 = {
-    heading : TD.label({x:10,y:10,width:170,height:220, label:"Home Automation v1.0"}),
-    //bat : TD.gauge({x:190,y:10,width:170,height:220,label:"Battery Level",value:0,min:0,max:100}),
-   tempAve: TD.value({x:195,y:10,width:175,height:105,label:"Average Temperature",value:""}),
-   humidityAve: TD.value({x:195,y:125,width:175,height:105,label:"Average Humidity",value:""}),
-   //
-        for (var i in elements)
-    document.body.appendChild(elements[i]);
-   }
   for (var i in elements)
     document.body.appendChild(elements[i]);
   
